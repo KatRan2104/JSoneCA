@@ -22,7 +22,7 @@ function saveShoppingCart (productsInCart) {
 // ADDER TIL CART, vi henter cartet som finnes fra før, og det er tomt. om nei så lager vi en ny liste med innhod og legger til vårt produkt.
 
 function addProductToCart (product) {
-    console.log('ID: ' + product.id + ' Title: ' + product.title + ' Price: ' + product.price);
+    // console.log('ID: ' + product.id + ' Title: ' + product.title + ' Price: ' + product.price);
     var productsInCart = getShoppingCart();
     if (!Array.isArray(productsInCart) || !productsInCart.length) {
         var cartEntry = {productID: product.id, productCount: 1};
@@ -59,7 +59,7 @@ function showCart () {
 
     var shoppingCartContent = getShoppingCart();
     for (var i = 0; i < shoppingCartContent.length; i++) {
-        console.log(shoppingCartContent[i]);
+        // console.log(shoppingCartContent[i]);
         var cartItemNode = createCartItemNode(shoppingCartContent[i]);
         productsInCartElement.appendChild(cartItemNode);
     }
@@ -67,17 +67,17 @@ function showCart () {
 
 function createCartItemNode (cartItem) {
     var currentProduct = undefined;
-    console.log("All products container array contains:");
-    console.log(allProductsContainerArray);
+    // console.log("All products container array contains:");
+    // console.log(allProductsContainerArray);
     for (var i = 0; i < allProductsContainerArray.length; i++) {
-        console.log("Checking if product with id" + cartItem.productID + " is the same as" + allProductsContainerArray[i].id);
+        // console.log("Checking if product with id" + cartItem.productID + " is the same as" + allProductsContainerArray[i].id);
         if (allProductsContainerArray[i].id == cartItem.productID) {
             currentProduct = allProductsContainerArray[i];
             break;
         }
     }
     if (currentProduct == undefined) {
-        console.log("Product not found in all products container array"+ cartItem.productID);
+        // console.log("Product not found in all products container array"+ cartItem.productID);
         return document.createElement("div");
     }
 

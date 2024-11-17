@@ -32,7 +32,7 @@ function saveShoppingCart (productsInCart) {
 // ADDER TIL CART, vi henter cartet som finnes fra før, og det er tomt. om nei så lager vi en ny liste med innhod og legger til vårt produkt.
 
 function addProductToCart (product) {
-    console.log('ID: ' + product.id + ' Title: ' + product.title + ' Price: ' + product.price);
+    // console.log('ID: ' + product.id + ' Title: ' + product.title + ' Price: ' + product.price);
     var productsInCart = getShoppingCart();
     if (!Array.isArray(productsInCart) || !productsInCart.length) {
         var cartEntry = {productID: product.id, productCount: 1};
@@ -123,7 +123,7 @@ function displaySelectedProducts() {
 
 function displayProductInfo (product) {
     var productContainer = document.createElement("div");
-    console.log(product);
+    // console.log(product);
     var productImage = product.image;
 
     const imgElement = document.createElement("img");
@@ -172,6 +172,6 @@ function displayProductInfo (product) {
 
 
 function goToProductPage(product) {
-    console.log("Go to product page", product);
+    // console.log("Go to product page", product);
     window.location.href = "src/html/product.html?id=" + product.id;
 }

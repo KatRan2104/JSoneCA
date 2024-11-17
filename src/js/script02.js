@@ -12,11 +12,11 @@ async function fetchData() {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         productsContainerArray = data;
         displayProducts();
     } catch (error) {
-        console.log("An error occurred", error);
+        // console.log("An error occurred", error);
     }
 }
 fetch(apiUrl)
@@ -30,13 +30,13 @@ fetch(apiUrl)
     .then(data => {
 
         // fjerner jeg denne biten så blir all dataen borte.
-        console.log(data);
+        // console.log(data);
         document.getElementById("product").innerHTML = JSON.stringify(data, null, 2);
-        console.log(data);
+        // console.log(data);
         //
     })
     .catch(error => {
-        console.error('Fetch error:', error); // Handle any errors
+        // console.error('Fetch error:', error); // Handle any errors
     return APIdata;
 });
 
@@ -48,8 +48,8 @@ const displayProducts = {
 };
 
 const jasonString = JSON.stringify(displayProducts);
-console.log(jasonString);
+// console.log(jasonString);
 
 const object = JSON.parse(jasonString);
-console.log(object);
+// console.log(object);
 

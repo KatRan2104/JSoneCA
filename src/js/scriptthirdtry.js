@@ -9,19 +9,19 @@ let productsContainerArray = [];
 let apiData = null;
 
 // function trykk () {
-// console.log("trykket");
+// // console.log("trykket");
 // }
 
 async function fetchData() {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log("her kommer json lobbyen");
-        console.log(data);
+        // console.log("her kommer json lobbyen");
+        // console.log(data);
         productsContainerArray = data;
         displayProducts();
     } catch (error) {
-        console.log("An error occurred", error);
+        // console.log("An error occurred", error);
     }
 }
 
@@ -82,7 +82,7 @@ fetch(apiUrl)
 
 // her tilskriver jeg kanppen en funksjonalitet ish. eg. går til produktsiden.
 function goToProductPage(product) {
-    console.log("Go to product page", product);
+    // console.log("Go to product page", product);
     window.location.href = "src/html/product.html?id=" + product.id;
 }
 // Display the data in the console

@@ -1,5 +1,5 @@
 const productsContainer = document.querySelector(".products-container");
-console.log(productsContainer);
+// console.log(productsContainer);
 const urlAPI ="https://v2.api.noroff.dev/rainy-days";
 
 async function fetchAndDisplayData() {
@@ -7,13 +7,13 @@ async function fetchAndDisplayData() {
         //Fetch data
         const response = await fetch(API);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         //Display data
         displayData(data);
-        console.log(data);
+        // console.log(data);
     }
     catch (err) {
-        console.log("An error occurred", err);
+        // console.log("An error occurred", err);
         }
     }
 

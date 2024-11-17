@@ -3,9 +3,9 @@ const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 document.addEventListener("DOMContentLoaded", async function() {
     await fetchAllProductsInfo();
     var ProductIDfromUrl = getProductIDfromUrl();
-    console.log(allProductsContainerArray);
+    // console.log(allProductsContainerArray);
     var product = allProductsContainerArray.find(p => p.id == ProductIDfromUrl);
-    console.log(product);
+    // console.log(product);
     displayProductInfo (product);
 });
 
@@ -23,7 +23,7 @@ async function fetchAllProductsInfo () {
 function getProductIDfromUrl () {
     const urlParams = new URLSearchParams(window.location.search);
     const idParam = urlParams.get("id");
-    console.log("ID: " + idParam);
+    // console.log("ID: " + idParam);
     return idParam;
 }
 
@@ -42,7 +42,7 @@ function saveShoppingCart (productsInCart) {
 // ADDER TIL CART, vi henter cartet som finnes fra før, og det er tomt. om nei så lager vi en ny liste med innhod og legger til vårt produkt.
 
 function addProductToCart (product) {
-    console.log('ID: ' + product.id + ' Title: ' + product.title + ' Price: ' + product.price);
+    // console.log('ID: ' + product.id + ' Title: ' + product.title + ' Price: ' + product.price);
     var productsInCart = getShoppingCart();
     if (!Array.isArray(productsInCart) || !productsInCart.length) {
         var cartEntry = {productID: product.id, productCount: 1};
@@ -67,7 +67,7 @@ function addProductToCart (product) {
 
 function displayProductInfo (product) {
     var productContainer = document.getElementById("product");
-    console.log(product);
+    // console.log(product);
     var productImage = product.image;
 
     const imgElement = document.createElement("img");
