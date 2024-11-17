@@ -107,7 +107,8 @@ function createCartItemNode (cartItem) {
     var newElementButton = document.createElement("button");
     newElementButton.onclick = () => {
         removeProductFromCart(cartItem.productID);
-        location.reload();
+        // location.reload();
+        window.location.href = "./index.html";
     };
     const textNodeButton = document.createTextNode("Remove from cart");
     newElementButton.appendChild(textNodeButton);
@@ -145,7 +146,7 @@ function addCartActionButtons () {
 
     var newElementButton = document.createElement("button");
     newElementButton.onclick = () => {
-        window.location.href = "../../index1.2.html";
+        window.location.href = "../index.html";
     };
     const textNodeButton = document.createTextNode("Continue shopping");
     newElementButton.appendChild(textNodeButton);
@@ -153,7 +154,7 @@ function addCartActionButtons () {
 
     var newElementButton2 = document.createElement("button");
     newElementButton2.onclick = () => {
-        window.location.href = "./checkoutsucess.html";
+        window.location.href = "./confirmation/index.html";
     };
     const textNodeButton2 = document.createTextNode("Checkout");
     newElementButton2.appendChild(textNodeButton2);

@@ -3,7 +3,7 @@ const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 document.addEventListener("DOMContentLoaded", async function() {
     await fetchAllProductsInfo();
     displaySelectedProducts ();
-    addFilterGender ();ß
+    addFilterGender ();
 });
 
 var allProductsContainerArray = [];
@@ -173,5 +173,5 @@ function displayProductInfo (product) {
 
 function goToProductPage(product) {
     // console.log("Go to product page", product);
-    window.location.href = "src/html/product.html?id=" + product.id;
+    window.location.href = "./product/index.html?id=" + product.id;
 }
