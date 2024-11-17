@@ -3,6 +3,7 @@ const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 document.addEventListener("DOMContentLoaded", async function() {
     await fetchAllProductsInfo();
     displaySelectedProducts ();
+    addFilterGender ();ß
 });
 
 var allProductsContainerArray = [];
@@ -52,6 +53,47 @@ function addProductToCart (product) {
     saveShoppingCart(productsInCart);
 }
 
+// Add filter for gender
+
+function addFilterGender () {
+    var genderFilter = document.getElementById("select-gender");
+    var labelElement = document.createElement("label");
+    labelElement.setAttribute("for", "selected-gender");
+    var labelElementText = document.createTextNode("Shop by Gender ");
+    labelElement.appendChild(labelElementText);
+    genderFilter.appendChild(labelElement);
+
+    var selectElement = document.createElement("select");
+    selectElement.setAttribute("id", "selected-gender");
+    selectElement.setAttribute("name", "selected-gender");
+
+    var optionElementOne = document.createElement("option");
+    optionElementOne.setAttribute("value", "all");
+    var optionElementOneText = document.createTextNode("All");
+    optionElementOne.appendChild(optionElementOneText);
+    selectElement.appendChild(optionElementOne);
+
+    var optionElementTwo = document.createElement("option");
+    optionElementTwo.setAttribute("value", "Male");
+    var optionElementTwoText = document.createTextNode("Male")
+    optionElementTwo.appendChild(optionElementTwoText);
+    selectElement.appendChild(optionElementTwo);
+
+    var optionElementThree = document.createElement("option");
+    optionElementThree.setAttribute("value", "Female");
+    var optionElementThreeText = document.createTextNode("Female")
+    optionElementThree.appendChild(optionElementThreeText);
+    selectElement.appendChild(optionElementThree);
+
+
+    selectElement.onchange = () => {
+        displaySelectedProducts();
+    };
+
+    genderFilter.appendChild(selectElement);
+}
+
+
 
 // function displaySelectedProducts
 
@@ -66,8 +108,8 @@ function displaySelectedProducts() {
         var productContainer = displayProductInfo(product);
         productsContainer.appendChild(productContainer);
     }
-
 }
+
 
 // Show product info to page
 
