@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     await fetchAllProductsInfo();
     showCart();
     showTotalPrice();
+    addCartActionButtons ()
 });
 
 var allProductsContainerArray = [];
@@ -137,6 +138,26 @@ function showTotalPrice () {
     var totalPrice = calculateTotalPrice();
     var totalPriceTextNode = document.createTextNode("Total price: " + totalPrice + " NOK " );
     totalPriceElement.appendChild(totalPriceTextNode);
+}
+
+function addCartActionButtons () {
+    var cartActionButtons = document.getElementById("cart-actions");
+
+    var newElementButton = document.createElement("button");
+    newElementButton.onclick = () => {
+        window.location.href = "../../index1.2.html";
+    };
+    const textNodeButton = document.createTextNode("Continue shopping");
+    newElementButton.appendChild(textNodeButton);
+    cartActionButtons.appendChild(newElementButton);
+
+    var newElementButton2 = document.createElement("button");
+    newElementButton2.onclick = () => {
+        window.location.href = "./checkoutsucess.html";
+    };
+    const textNodeButton2 = document.createTextNode("Checkout");
+    newElementButton2.appendChild(textNodeButton2);
+    cartActionButtons.appendChild(newElementButton2);
 }
 
 async function fetchAllProductsInfo () {
