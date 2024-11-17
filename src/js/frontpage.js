@@ -103,6 +103,14 @@ function displaySelectedProducts() {
 
     var productsToShow = allProductsContainerArray;
     // To Do:  apply filters like gender
+    var selectedGender = document.getElementById("selected-gender")?.value;
+    if (selectedGender == "Male") {
+        productsToShow = allProductsContainerArray.filter(p => p.gender == selectedGender);
+    }
+    else if (selectedGender == "Female") {
+        productsToShow = allProductsContainerArray.filter(p => p.gender == selectedGender);
+    }
+
     for (var i = 0; i < productsToShow.length; i++) {
         var product = productsToShow[i];
         var productContainer = displayProductInfo(product);
